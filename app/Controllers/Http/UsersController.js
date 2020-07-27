@@ -6,8 +6,8 @@ const Token = use('App/Models/Token')
 const Encryption = use('Encryption')
 const Drive = use('Drive')
 const Helpers = use('Helpers')
-const UsersGrant = use('App/Models/UsersGrant')
 const _ = require('lodash')
+const dt = make('App/Libraries/Datatable')
 
 class UsersController {
 
@@ -88,6 +88,23 @@ class UsersController {
             .header('Content-Transfer-Encoding', 'binary')
             .header('Cache-Control', 'public, max-age=10800, pre-check=10800');
         response.send(photo);
+    }
+
+    async fetch({ request }){
+        let result = { code: 'Ok' };
+        let $columns = [
+            { db: 'id', dt: 'id' },
+            { db: 'username', dt: 'username', search: true },
+            { db: 'email', dt: 'email', search: true },
+            { db: 'banned', dt: 'banned' },
+            { db: 'created_at', dt: 'created_at' }
+        ];
+        try {
+            result.dt = await dt.complex(request.all(), 'users', 'id', $columns)
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
     }
 }
 

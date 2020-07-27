@@ -40,6 +40,16 @@ class RoleController {
         }
         return result;
     }
+
+    async getRolesForSelect({ request }){
+        let result = { code: 'Ok' };
+        try {
+            result.roles = await Database.from('roles').select('id','name');
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
 }
 
 module.exports = RoleController

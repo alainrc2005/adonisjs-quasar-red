@@ -31,7 +31,7 @@
             </template>
             <template v-slot:body="props">
                 <q-tr :props="props">
-                    <q-td key="name">{{props.row.name}}</q-td>
+                    <q-td key="name">{{props.row.username}}</q-td>
                     <q-td key="email">{{props.row.email}}</q-td>
                     <q-td class="text-center" key="created_at">{{props.row.created_at | formatDateTime}}</q-td>
                     <q-td class="text-center" key="actions">
@@ -54,7 +54,7 @@
                 <div class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition">
                     <q-card>
                         <q-card-section>
-                            <q-toggle :label="props.row.name" keep-color color="warning" :value="props.row.banned==='1'"
+                            <q-toggle :label="props.row.username" keep-color color="warning" :value="props.row.banned==='1'"
                                       @input="e=>banned(e,props.row)">
                                 <q-tooltip content-class="bg-yellow-12 text-black shadow-4">
                                     {{props.row.banned==='1'?'Desactivar':'Activar'}}
@@ -150,8 +150,8 @@
                             </div>
                         </div>
                     </div>
-                    <q-input dense v-model="$v.user.name.$model" label="Nombre y Apellidos"
-                             :error="$v.user.name.$invalid"
+                    <q-input dense v-model="$v.user.username.$model" label="Nombre y Apellidos"
+                             :error="$v.user.username.$invalid"
                              hide-bottom-space/>
                     <q-input dense v-model="$v.user.email.$model" label="Correo Electrónico"
                              :error="$v.user.email.$invalid"
@@ -192,7 +192,7 @@
                 users: [],
                 user: {
                     id: null,
-                    name: null,
+                    username: null,
                     email: null,
                     roles: []
                 },
@@ -203,7 +203,7 @@
                 roles: [],
                 filter: '',
                 pagination: {
-                    sortBy: 'name',
+                    sortBy: 'username',
                     descending: true,
                     page: 1,
                     rowsPerPage: 10,
@@ -211,11 +211,11 @@
                 },
                 columns: [
                     {
-                        name: 'name',
+                        name: 'username',
                         required: true,
                         label: 'Nombre y Apellidos',
                         align: 'left',
-                        field: 'name',
+                        field: 'username',
                         sortable: true
                     },
                     {
@@ -246,7 +246,7 @@
         },
         validations: {
             user: {
-                name: {required, minLength: minLength(3)},
+                username: {required, minLength: minLength(3)},
                 email: {required, email},
                 roles: {required},
             }
@@ -291,7 +291,7 @@
             },
             create() {
                 this.action = 'create';
-                this.user.id = this.user.name = this.user.email = null;
+                this.user.id = this.user.username = this.user.email = null;
                 this.user.roles = [];
                 this.$refs.dlg.show();
             },

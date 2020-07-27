@@ -220,7 +220,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       users: [],
       user: {
         id: null,
-        name: null,
+        username: null,
         email: null,
         roles: []
       },
@@ -231,18 +231,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       roles: [],
       filter: '',
       pagination: {
-        sortBy: 'name',
+        sortBy: 'username',
         descending: true,
         page: 1,
         rowsPerPage: 10,
         rowsNumber: 0
       },
       columns: [{
-        name: 'name',
+        name: 'username',
         required: true,
         label: 'Nombre y Apellidos',
         align: 'left',
-        field: 'name',
+        field: 'username',
         sortable: true
       }, {
         name: 'email',
@@ -269,7 +269,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   validations: {
     user: {
-      name: {
+      username: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
         minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(3)
       },
@@ -358,7 +358,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     create: function create() {
       this.action = 'create';
-      this.user.id = this.user.name = this.user.email = null;
+      this.user.id = this.user.username = this.user.email = null;
       this.user.roles = [];
       this.$refs.dlg.show();
     },
@@ -610,7 +610,7 @@ var render = function() {
                   { attrs: { props: props } },
                   [
                     _c("q-td", { key: "name" }, [
-                      _vm._v(_vm._s(props.row.name))
+                      _vm._v(_vm._s(props.row.username))
                     ]),
                     _vm._v(" "),
                     _c("q-td", { key: "email" }, [
@@ -759,7 +759,7 @@ var render = function() {
                               "q-toggle",
                               {
                                 attrs: {
-                                  label: props.row.name,
+                                  label: props.row.username,
                                   "keep-color": "",
                                   color: "warning",
                                   value: props.row.banned === "1"
@@ -1102,15 +1102,15 @@ var render = function() {
                     attrs: {
                       dense: "",
                       label: "Nombre y Apellidos",
-                      error: _vm.$v.user.name.$invalid,
+                      error: _vm.$v.user.username.$invalid,
                       "hide-bottom-space": ""
                     },
                     model: {
-                      value: _vm.$v.user.name.$model,
+                      value: _vm.$v.user.username.$model,
                       callback: function($$v) {
-                        _vm.$set(_vm.$v.user.name, "$model", $$v)
+                        _vm.$set(_vm.$v.user.username, "$model", $$v)
                       },
-                      expression: "$v.user.name.$model"
+                      expression: "$v.user.username.$model"
                     }
                   }),
                   _vm._v(" "),

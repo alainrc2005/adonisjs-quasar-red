@@ -24,6 +24,8 @@ Route.get('/user/photo/:id','UsersController.getUserPhotoById')
 
 Route.group(() => {
     Route.post('/user/logout','UsersController.logout')
+    Route.post('/users/list','UsersController.fetch')
+
     Route.post('/stats','MainController.getMainDashboard')
     Route.post('/admin/stats','MainController.getAdminDashboard')
 
@@ -34,6 +36,7 @@ Route.group(() => {
     Route.post('/roles/list','RoleController.fetch')
     Route.post('/roles/grants','RoleController.getGrants')
     Route.post('/roles/rolgrants','RoleController.getRolGrants')
+    Route.post('/roles/forselect','RoleController.getRolesForSelect')
   }).prefix('api').middleware(['auth'])
 
 
