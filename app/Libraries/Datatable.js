@@ -1,7 +1,13 @@
 'use strict';
+/*
+|--------------------------------------------------------------------------
+| Autor: Lic. Alain Ramirez Cabrejas
+|--------------------------------------------------------------------------
+|
+|
+*/
+
 const Database = use('Database')
-const _ = require('lodash');
-const { forEach } = require('lodash');
 
 class Datatable {
     limit(query, request) {
@@ -23,7 +29,7 @@ class Datatable {
     filter(query, request, columns) {
         if (request.filter) {
             columns.forEach(col=>{
-                if ('search' in col) query.where(col.db, `%${request.filter}%`);
+                if ('search' in col) query.whereRaw(`${col.db} like '%${request.filter}%'`);
             })
         }
     }
@@ -43,7 +49,7 @@ class Datatable {
         let clone = query.clone();
         this.limit(query, request);
         this.order(query, request);
-        query.select(_.map(columns, el => {
+        query.select(columns.map(el => {
             return el.db;
         }));
         return {
