@@ -46,6 +46,7 @@ Route.group(() => {
     Route.post('/speeds/list','SpeedController.fetch')
 
     Route.post('/resources/list','ResourceController.fetch')
+    Route.post('/resource/store','ResourceController.store')
   }).prefix('api').middleware(['auth'])
 
 

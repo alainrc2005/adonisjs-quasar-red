@@ -1,8 +1,10 @@
 'use strict'
 const dt = make('App/Libraries/Datatable')
+const br = make('App/Libraries/BaseRepo')
+const Resource = use('App/Models/Resource')
 
 class ResourceController {
-    async fetch({ request }){
+    async fetch({ request }) {
         let result = { code: 'Ok' };
         let $columns = [
             { db: 'id' },
@@ -11,6 +13,16 @@ class ResourceController {
         ];
         try {
             result.dt = await dt.complex(request.all(), 'resources', 'id', $columns)
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async store({ request, auth }) {
+        let result = { code: 'Ok' };
+        try {
+            await br.commonCreate(Resource, request, 'D013', auth.user.id);
         } catch (e) {
             result.code = e.message;
         }
