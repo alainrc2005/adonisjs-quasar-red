@@ -93,11 +93,11 @@ class UsersController {
     async fetch({ request }){
         let result = { code: 'Ok' };
         let $columns = [
-            { db: 'id', dt: 'id' },
-            { db: 'username', dt: 'username', search: true },
-            { db: 'email', dt: 'email', search: true },
-            { db: 'banned', dt: 'banned' },
-            { db: 'created_at', dt: 'created_at' }
+            { db: 'id' },
+            { db: 'username', search: true },
+            { db: 'email', search: true },
+            { db: 'banned' },
+            { db: 'created_at' }
         ];
         try {
             result.dt = await dt.complex(request.all(), 'users', 'id', $columns)

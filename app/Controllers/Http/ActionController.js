@@ -33,11 +33,11 @@ class ActionController {
     async fetch({ request }) {
         let result = { code: 'Ok' };
         let $columns = [
-            { db: 'id', dt: 'id', search: false },
-            { db: 'user', dt: 'user', search: false },
-            { db: 'action', dt: 'action', search: false },
-            { db: 'datetime', dt: 'datetime', search: false },
-            { db: 'machine', dt: 'machine', search: false }
+            { db: 'id' },
+            { db: 'user' },
+            { db: 'action' },
+            { db: 'datetime' },
+            { db: 'machine' }
         ];
         try {
             let where = [];

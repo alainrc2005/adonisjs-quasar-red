@@ -6,9 +6,9 @@ class RoleController {
     async fetch({ request }) {
         let result = { code: 'Ok' };
         let $columns = [
-            { db: 'id', dt: 'id' },
-            { db: 'name', dt: 'name', search: true },
-            { db: 'created_at', dt: 'created_at' }
+            { db: 'id' },
+            { db: 'name', search: true },
+            { db: 'created_at' }
         ];
         try {
             result.dt = await dt.complex(request.all(), 'roles', 'id', $columns)

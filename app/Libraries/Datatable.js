@@ -3,6 +3,12 @@
 |--------------------------------------------------------------------------
 | Autor: Lic. Alain Ramirez Cabrejas
 |--------------------------------------------------------------------------
+| startRow: startRow = (page - 1) * rowsPerPage
+| rowsPerPage: Filas por páginas
+| filter: string a buscar en todas las columnas que se determine en columns
+| sortBy: Columna para realizar el ordenamiento
+| descending: Tipo de ordenamiento ascesdente (asc) o descendente (desc)
+|--------------------------------------------------------------------------
 */
 
 const Database = use('Database')
@@ -15,7 +21,7 @@ class Datatable {
     }
 
     order(query, request) {
-        if ('sortBy' in request) {
+        if ('sortBy' in request && request.sortBy !== null) {
             if ('descending' in request && request.descending) {
                 query.orderBy(request.sortBy, 'desc');
             } else {
@@ -25,9 +31,9 @@ class Datatable {
     }
 
     filter(query, request, columns) {
-        if (request.filter) {
-            columns.forEach(col=>{
-                if ('search' in col) query.whereRaw(`${col.db} like '%${request.filter}%'`);
+        if ('filter' in request && request.filter !== null) {
+            columns.forEach(col => {
+                if ('search' in col) query.orWhereRaw(`${col.db} like '%${request.filter}%'`);
             })
         }
     }
