@@ -37,6 +37,15 @@ Route.group(() => {
     Route.post('/roles/grants','RoleController.getGrants')
     Route.post('/roles/rolgrants','RoleController.getRolGrants')
     Route.post('/roles/forselect','RoleController.getRolesForSelect')
+
+    Route.post('/provinces/list','ProvinceController.fetch')
+
+    Route.post('/municipalities/list','MunicipalityController.fetch')
+    Route.post('/municipalities/forselect','MunicipalityController.getForSelect')
+
+    Route.post('/speeds/list','SpeedController.fetch')
+
+    Route.post('/resources/list','ResourceController.fetch')
   }).prefix('api').middleware(['auth'])
 
 
