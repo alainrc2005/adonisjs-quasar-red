@@ -46,7 +46,7 @@ class Datatable {
         }
     }
 
-    async complex(request, table, primaryKey, columns, where) {
+    async execute(request, table, primaryKey, columns, where) {
         let query = Database.from(table);
         this.filter(query, request, columns);
         this.whereRaw(query, where)
@@ -61,7 +61,6 @@ class Datatable {
             recordsFiltered: (await clone.getCount()),
             rows: await query
         }
-
     }
 }
 

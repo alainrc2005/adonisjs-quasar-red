@@ -12,7 +12,7 @@ class ResourceController {
             { db: 'updated_at' }
         ];
         try {
-            result.dt = await dt.complex(request.all(), 'resources', 'id', $columns)
+            result.dt = await dt.execute(request.all(), 'resources', 'id', $columns)
         } catch (e) {
             result.code = e.message;
         }

@@ -10,7 +10,7 @@ class ProvinceController {
             { db: 'updated_at' }
         ];
         try {
-            result.dt = await dt.complex(request.all(), 'provinces', 'id', $columns)
+            result.dt = await dt.execute(request.all(), 'provinces', 'id', $columns)
         } catch (e) {
             result.code = e.message;
         }

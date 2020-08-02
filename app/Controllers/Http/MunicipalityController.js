@@ -13,7 +13,7 @@ class MunicipalityController {
         ];
         try {
             let where = [`province = ${request.input('province')}`];
-            result.dt = await dt.complex(request.all(), 'municipalities', 'id', $columns, where);
+            result.dt = await dt.execute(request.all(), 'municipalities', 'id', $columns, where);
         } catch (e) {
             result.code = e.message;
         }

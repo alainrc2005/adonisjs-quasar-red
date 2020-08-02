@@ -53,7 +53,7 @@ class ActionController {
                 where.push(`datetime <= '${m.endOf('day').format('YYYY-MM-DD HH:mm')}'`);
             }
             if (filters.machine) where.push(`machine like '%${filters.machine}%'`);
-            result.dt = await dt.complex(request.all(), 'v_actions', 'id', $columns, where)
+            result.dt = await dt.execute(request.all(), 'v_actions', 'id', $columns, where)
         } catch (e) {
             result.code = e.message;
         }

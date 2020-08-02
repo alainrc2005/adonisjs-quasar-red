@@ -11,7 +11,7 @@ class RoleController {
             { db: 'created_at' }
         ];
         try {
-            result.dt = await dt.complex(request.all(), 'roles', 'id', $columns)
+            result.dt = await dt.execute(request.all(), 'roles', 'id', $columns)
         } catch (e) {
             result.code = e.message;
         }

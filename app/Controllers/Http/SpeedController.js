@@ -10,7 +10,7 @@ class SpeedController {
             { db: 'updated_at' }
         ];
         try {
-            result.dt = await dt.complex(request.all(), 'speeds', 'id', $columns)
+            result.dt = await dt.execute(request.all(), 'speeds', 'id', $columns)
         } catch (e) {
             result.code = e.message;
         }
