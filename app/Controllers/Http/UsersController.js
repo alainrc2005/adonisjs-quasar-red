@@ -8,6 +8,7 @@ const Drive = use('Drive')
 const Helpers = use('Helpers')
 const _ = require('lodash')
 const dt = make('App/Libraries/Datatable')
+const br = make('App/Libraries/BaseRepo')
 
 class UsersController {
 
@@ -33,6 +34,7 @@ class UsersController {
                     token: tokens.token,
                     refreshToken: tokens.refreshToken
                 }
+                br.createAction(request, 'D001', user.id, user.id);
                 session.put('user', row)
                 return {
                     code: 'Ok',
@@ -46,11 +48,12 @@ class UsersController {
         }
     }
 
-    async logout({ response, session }) {
+    async logout({ response, session, auth }) {
         try {
             const decrypted = Encryption.decrypt(session.get('user').refreshToken);
             const refreshToken = await Token.findBy('token', decrypted);
             if (refreshToken) {
+                br.createAction(request, 'D002', auth.user.id, auth.user.id);
                 refreshToken.delete();
                 session.clear();
                 response.status(200).send({ code: 'Ok' });
@@ -90,7 +93,7 @@ class UsersController {
         response.send(photo);
     }
 
-    async fetch({ request }){
+    async fetch({ request }) {
         let result = { code: 'Ok' };
         let $columns = [
             { db: 'id' },
