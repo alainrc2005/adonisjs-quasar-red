@@ -28,6 +28,26 @@ class ResourceController {
         }
         return result;
     }
+
+    async update({ request, auth }) {
+        let result = { code: 'Ok' };
+        try {
+            await br.commonUpdate(Resource, request, 'D014', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async destroy({ request, auth }) {
+        let result = { code: 'Ok' };
+        try {
+            await br.commonDestroy(Resource, request.input('id'), 'D015', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
 }
 
 module.exports = ResourceController

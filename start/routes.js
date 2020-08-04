@@ -47,6 +47,8 @@ Route.group(() => {
 
     Route.post('/resources/list','ResourceController.fetch')
     Route.post('/resource/store','ResourceController.store')
+    Route.post('/resource/update','ResourceController.update')
+    Route.post('/resource/destroy','ResourceController.destroy')
   }).prefix('api').middleware(['auth'])
 
 

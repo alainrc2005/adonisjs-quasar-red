@@ -35,7 +35,7 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/validator": "^5.0.6",
-    "@mdi/font": "^5.3.45",
+    "@mdi/font": "^5.4.55",
     "animate.css": "^4.1.0",
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
@@ -46,7 +46,7 @@
     "material-design-icons-iconfont": "^5.0.1",
     "moment": "^2.27.0",
     "mysql": "^2.18.1",
-    "quasar": "^1.12.12",
+    "quasar": "^1.12.13",
     "typeface-josefin-sans": "0.0.75",
     "vue": "^2.6.11",
     "vue-avatar-editor-improved": "^1.0.5",
@@ -55,7 +55,7 @@
     "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "resolve-url-loader": "^3.1.0",
+    "resolve-url-loader": "^3.1.1",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
