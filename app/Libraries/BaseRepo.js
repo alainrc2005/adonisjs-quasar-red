@@ -31,11 +31,11 @@ class BaseRepo {
         })
     }
 
-    async commonDestroy(model, id, action, user_id, afterDestroy, beforeDestroy) {
+    async commonDestroy(model, request, action, user_id, afterDestroy, beforeDestroy) {
         return await Database.transaction(async (trx) => {
-            let record = await model.findOrFail(row.id);
+            let record = await model.findOrFail(request.input('id'));
             if (typeof (beforeDestroy) === 'function') beforeDestroy(record, trx);
-            await model.query().where('id', id).delete();
+            await model.query().where('id', record.id).delete();
             if (typeof (afterDestroy) === 'function') afterDestroy(record, trx);
             await trx.insert(this.getActionData(action, user_id, request.ip(), JSON.stringify(record))).into('actions');
             return record;

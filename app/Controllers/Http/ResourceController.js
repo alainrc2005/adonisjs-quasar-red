@@ -42,7 +42,7 @@ class ResourceController {
     async destroy({ request, auth }) {
         let result = { code: 'Ok' };
         try {
-            await br.commonDestroy(Resource, request.input('id'), 'D015', auth.user.id);
+            await br.commonDestroy(Resource, request, 'D015', auth.user.id);
         } catch (e) {
             result.code = e.message;
         }
