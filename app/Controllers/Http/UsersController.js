@@ -48,7 +48,7 @@ class UsersController {
         }
     }
 
-    async logout({ response, session, auth }) {
+    async logout({ request, response, session, auth }) {
         try {
             const decrypted = Encryption.decrypt(session.get('user').refreshToken);
             const refreshToken = await Token.findBy('token', decrypted);

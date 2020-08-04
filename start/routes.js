@@ -39,11 +39,17 @@ Route.group(() => {
     Route.post('/roles/forselect','RoleController.getRolesForSelect')
 
     Route.post('/provinces/list','ProvinceController.fetch')
+    Route.post('/province/store','ProvinceController.store')
+    Route.post('/province/update','ProvinceController.update')
+    Route.post('/province/destroy','ProvinceController.destroy')
 
     Route.post('/municipalities/list','MunicipalityController.fetch')
     Route.post('/municipalities/forselect','MunicipalityController.getForSelect')
 
     Route.post('/speeds/list','SpeedController.fetch')
+    Route.post('/speed/store','SpeedController.store')
+    Route.post('/speed/update','SpeedController.update')
+    Route.post('/speed/destroy','SpeedController.destroy')
 
     Route.post('/resources/list','ResourceController.fetch')
     Route.post('/resource/store','ResourceController.store')
