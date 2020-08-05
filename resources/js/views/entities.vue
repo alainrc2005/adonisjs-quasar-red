@@ -126,7 +126,7 @@
                     </q-toolbar>
                 </q-card-section>
                 <q-card-section>
-                    <q-select v-model="filters.speed" label="Velocidad del Enlace"
+                    <q-select clearable v-model="filters.speed" label="Velocidad del Enlace"
                     :options="speeds" emit-value map-options option-value="id" option-label="description"/>
                 </q-card-section>
                 <q-card-actions align="right">

@@ -43165,7 +43165,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, browserslist, bugs, bundleDependencies, deprecated, description, devDependencies, engines, files, funding, homepage, keywords, license, main, module, name, repository, scripts, typings, version, vetur, web-types, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_from\":\"quasar\",\"_id\":\"quasar@1.12.12\",\"_inBundle\":false,\"_integrity\":\"sha512-5q+sHCmfaCDqlFRyaZGKUjOHxxiYnlH8RUlr5yfIsAbvv7BZhTJAjZf4MuvdxqI8DBt4G8CAzHdUhaKlhVTIBQ==\",\"_location\":\"/quasar\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"tag\",\"registry\":true,\"raw\":\"quasar\",\"name\":\"quasar\",\"escapedName\":\"quasar\",\"rawSpec\":\"\",\"saveSpec\":null,\"fetchSpec\":\"latest\"},\"_requiredBy\":[\"#USER\",\"/\"],\"_resolved\":\"https://registry.npmjs.org/quasar/-/quasar-1.12.12.tgz\",\"_shasum\":\"a06031b99eb55fa059ab40417f41ac6d07cfeae4\",\"_spec\":\"quasar\",\"_where\":\"C:\\\\Utiles\\\\xampp\\\\htdocs\\\\zunrev\",\"author\":{\"name\":\"Razvan Stoenescu\",\"email\":\"razvan.stoenescu@gmail.com\",\"url\":\"https://quasar.dev\"},\"browserslist\":[\"last 1 version, not dead, ie >= 11\"],\"bugs\":{\"url\":\"https://github.com/quasarframework/quasar/issues\"},\"bundleDependencies\":false,\"deprecated\":false,\"description\":\"Build high-performance VueJS user interfaces (SPA, PWA, SSR, Mobile and Desktop) in record time\",\"devDependencies\":{\"@quasar/app\":\"^2.0.0\",\"@quasar/extras\":\"^1.6.1\",\"@rollup/plugin-buble\":\"^0.21.1\",\"@rollup/plugin-json\":\"^4.0.2\",\"@rollup/plugin-node-resolve\":\"^7.1.0\",\"babel-eslint\":\"^10.0.2\",\"babel-preset-es2015-rollup\":\"^3.0.0\",\"eslint\":\"^5.15.3\",\"eslint-config-standard\":\"^12.0.0\",\"eslint-friendly-formatter\":\"^4.0.1\",\"eslint-loader\":\"^2.2.1\",\"eslint-plugin-import\":\"^2.18.2\",\"eslint-plugin-node\":\"^9.1.0\",\"eslint-plugin-promise\":\"^4.2.1\",\"eslint-plugin-standard\":\"^4.0.1\",\"eslint-plugin-vue\":\"^5.2.3\",\"friendly-errors-webpack-plugin\":\"^1.7.0\",\"json-beautify\":\"^1.1.1\",\"module-alias\":\"^2.2.2\",\"recast\":\"^0.18.5\",\"rimraf\":\"^3.0.1\",\"rollup\":\"^1.31.0\",\"table\":\"^5.4.6\",\"uglify-es\":\"^3.3.9\",\"vue\":\"^2.6.11\"},\"engines\":{\"node\":\">= 10.0.0\",\"npm\":\">= 5.6.0\",\"yarn\":\">= 1.6.0\"},\"files\":[\"dist\",\"lang\",\"icon-set\",\"src\",\"wrappers\"],\"funding\":{\"type\":\"github\",\"url\":\"https://donate.quasar.dev\"},\"homepage\":\"https://quasar.dev\",\"keywords\":[\"vuejs\",\"vue\",\"quasar\",\"js\",\"phone\",\"tablet\",\"desktop\",\"spa\",\"pwa\",\"website\",\"electron\"],\"license\":\"MIT\",\"main\":\"dist/quasar.common.js\",\"module\":\"src/index.esm.js\",\"name\":\"quasar\",\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/quasarframework/quasar.git\"},\"scripts\":{\"build\":\"node build/script.build.js\",\"clean\":\"node build/script.clean.js\",\"dev\":\"cd ./dev && node ./script.dev.js dev && cd ..\",\"dev:capacitor:android\":\"cd ./dev && node ./script.dev.js dev -m capacitor -T android && cd ..\",\"dev:capacitor:ios\":\"cd ./dev && node ./script.dev.js dev -m capacitor -T ios && cd ..\",\"dev:cordova:android\":\"cd ./dev && node ./script.dev.js dev -m cordova -T android && cd ..\",\"dev:cordova:ios\":\"cd ./dev && node ./script.dev.js dev -m cordova -T ios && cd ..\",\"dev:quploader\":\"cd dev/upload-server && yarn && cd ../.. && node dev/upload-server/server.js\",\"dev:ssr\":\"cd ./dev && node ./script.dev.js dev -m ssr && cd ..\",\"dev:umd\":\"node build/script.test-umd.js\",\"lint\":\"eslint --ext .js,.vue src dev\",\"lint-fix\":\"eslint --ext .js,.vue src dev --fix\",\"test\":\"yarn lint && yarn build\"},\"typings\":\"dist/types/index.d.ts\",\"version\":\"1.12.12\",\"vetur\":{\"tags\":\"dist/vetur/quasar-tags.json\",\"attributes\":\"dist/vetur/quasar-attributes.json\"},\"web-types\":\"dist/web-types/web-types.json\"}");
+module.exports = JSON.parse("{\"_from\":\"quasar@1.12.13\",\"_id\":\"quasar@1.12.13\",\"_inBundle\":false,\"_integrity\":\"sha512-e5cU3cxwZEc+MIJ6/a5IyV5HJ4B1WJscpEqDi+1BpIfVu4/9/WS9a0dnki5jVEvcsbuV4G133XCHQ09fdXoL1A==\",\"_location\":\"/quasar\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"quasar@1.12.13\",\"name\":\"quasar\",\"escapedName\":\"quasar\",\"rawSpec\":\"1.12.13\",\"saveSpec\":null,\"fetchSpec\":\"1.12.13\"},\"_requiredBy\":[\"#USER\",\"/\"],\"_resolved\":\"https://registry.npmjs.org/quasar/-/quasar-1.12.13.tgz\",\"_shasum\":\"236331b55a5403e42db5202ef8e66629aef4adf5\",\"_spec\":\"quasar@1.12.13\",\"_where\":\"C:\\\\Utiles\\\\xampp\\\\htdocs\\\\zunrev\",\"author\":{\"name\":\"Razvan Stoenescu\",\"email\":\"razvan.stoenescu@gmail.com\",\"url\":\"https://quasar.dev\"},\"browserslist\":[\"last 1 version, not dead, ie >= 11\"],\"bugs\":{\"url\":\"https://github.com/quasarframework/quasar/issues\"},\"bundleDependencies\":false,\"deprecated\":false,\"description\":\"Build high-performance VueJS user interfaces (SPA, PWA, SSR, Mobile and Desktop) in record time\",\"devDependencies\":{\"@quasar/app\":\"^2.0.0\",\"@quasar/extras\":\"^1.6.1\",\"@rollup/plugin-buble\":\"^0.21.1\",\"@rollup/plugin-json\":\"^4.0.2\",\"@rollup/plugin-node-resolve\":\"^7.1.0\",\"babel-eslint\":\"^10.0.2\",\"babel-preset-es2015-rollup\":\"^3.0.0\",\"eslint\":\"^7.4.0\",\"eslint-config-standard\":\"^12.0.0\",\"eslint-friendly-formatter\":\"^4.0.1\",\"eslint-loader\":\"^4.0.2\",\"eslint-plugin-import\":\"^2.18.2\",\"eslint-plugin-node\":\"^9.1.0\",\"eslint-plugin-promise\":\"^4.2.1\",\"eslint-plugin-standard\":\"^4.0.1\",\"eslint-plugin-vue\":\"^5.2.3\",\"friendly-errors-webpack-plugin\":\"^1.7.0\",\"json-beautify\":\"^1.1.1\",\"module-alias\":\"^2.2.2\",\"recast\":\"^0.18.5\",\"rimraf\":\"^3.0.1\",\"rollup\":\"^1.31.0\",\"table\":\"^5.4.6\",\"uglify-es\":\"^3.3.9\",\"vue\":\"^2.6.11\"},\"engines\":{\"node\":\">= 10.0.0\",\"npm\":\">= 5.6.0\",\"yarn\":\">= 1.6.0\"},\"files\":[\"dist\",\"lang\",\"icon-set\",\"src\",\"wrappers\"],\"funding\":{\"type\":\"github\",\"url\":\"https://donate.quasar.dev\"},\"homepage\":\"https://quasar.dev\",\"keywords\":[\"vuejs\",\"vue\",\"quasar\",\"js\",\"phone\",\"tablet\",\"desktop\",\"spa\",\"pwa\",\"website\",\"electron\"],\"license\":\"MIT\",\"main\":\"dist/quasar.common.js\",\"module\":\"src/index.esm.js\",\"name\":\"quasar\",\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/quasarframework/quasar.git\"},\"scripts\":{\"build\":\"node build/script.build.js\",\"clean\":\"node build/script.clean.js\",\"dev\":\"cd ./dev && node ./script.dev.js dev && cd ..\",\"dev:capacitor:android\":\"cd ./dev && node ./script.dev.js dev -m capacitor -T android && cd ..\",\"dev:capacitor:ios\":\"cd ./dev && node ./script.dev.js dev -m capacitor -T ios && cd ..\",\"dev:cordova:android\":\"cd ./dev && node ./script.dev.js dev -m cordova -T android && cd ..\",\"dev:cordova:ios\":\"cd ./dev && node ./script.dev.js dev -m cordova -T ios && cd ..\",\"dev:quploader\":\"cd dev/upload-server && yarn && cd ../.. && node dev/upload-server/server.js\",\"dev:ssr\":\"cd ./dev && node ./script.dev.js dev -m ssr && cd ..\",\"dev:umd\":\"node build/script.test-umd.js\",\"lint\":\"eslint --ext .js,.vue src dev\",\"lint-fix\":\"eslint --ext .js,.vue src dev --fix\",\"test\":\"yarn lint && yarn build\"},\"typings\":\"dist/types/index.d.ts\",\"version\":\"1.12.13\",\"vetur\":{\"tags\":\"dist/vetur/quasar-tags.json\",\"attributes\":\"dist/vetur/quasar-attributes.json\"},\"web-types\":\"dist/web-types/web-types.json\"}");
 
 /***/ }),
 
@@ -43251,7 +43251,7 @@ function clientUpdate () {
 }
 
 function setColors (brand) {
-  for (let color in brand) {
+  for (const color in brand) {
     Object(_utils_colors_js__WEBPACK_IMPORTED_MODULE_0__["setBrand"])(color, brand[color])
   }
 }
@@ -43847,7 +43847,7 @@ function restoreAjax (start, stop) {
     style () {
       const active = this.onScreen
 
-      let o = translate({
+      const o = translate({
         p: this.progress,
         pos: this.position,
         active,
@@ -48675,7 +48675,7 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   render (h) {
-    let child = []
+    const child = []
 
     this.title && child.push(
       h(_card_QCardSection_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -51126,10 +51126,10 @@ function getBtn (h, vm, btn, clickHandler, active = false) {
 }
 
 function getDropdown (h, vm, btn) {
+  const onlyIcons = btn.list === 'only-icons'
   let
     label = btn.label,
     icon = btn.icon,
-    onlyIcons = btn.list === 'only-icons',
     contentClass,
     Items
 
@@ -53729,6 +53729,14 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
+      if (icon.startsWith('svguse:') === true) {
+        return {
+          svguse: true,
+          cls: this.classes,
+          src: icon.substring(7)
+        }
+      }      
+      
       let content = ' '
 
       if (/^[l|f]a[s|r|l|b|d]{0,1} /.test(icon) || icon.startsWith('icon-') === true) {
@@ -53806,6 +53814,20 @@ __webpack_require__.r(__webpack_exports__);
       data.attrs.viewBox = this.type.viewBox
 
       return h('svg', data, Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["mergeSlot"])(this.type.nodes, this, 'default'))
+    }
+
+    if (this.type.svguse === true) {
+      data.attrs.focusable = 'false' /* needed for IE11 */
+      data.attrs.viewBox = this.type.viewBox
+    
+      return h('svg', data, [
+        h('use', {
+          attrs: {
+            'xlink:href': this.type.src
+          }
+        }),
+        Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["mergeSlot"])(this.type.nodes, this, 'default')
+      ])
     }
 
     return h(this.tag, data, Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["mergeSlot"])([
@@ -56305,7 +56327,7 @@ function globalHandler (evt) {
             Object(_utils_vm_js__WEBPACK_IMPORTED_MODULE_1__["isVmChildOf"])(Object(_utils_vm_js__WEBPACK_IMPORTED_MODULE_1__["getVmOfNode"])(target), vmEl) === false
           )
         ) {
-          // mark the event as beeing processed by clickOutside
+          // mark the event as being processed by clickOutside
           // used to prevent refocus after menu close
           evt.qClickOutside = true
 
@@ -58025,7 +58047,7 @@ const { passive } = _utils_event_js__WEBPACK_IMPORTED_MODULE_6__["listenOpts"]
     },
 
     __updatePos () {
-      let containerTop, containerHeight, containerBottom, top, bottom
+      let containerTop, containerHeight, containerBottom
 
       if (this.__scrollTarget === window) {
         containerTop = 0
@@ -58038,8 +58060,8 @@ const { passive } = _utils_event_js__WEBPACK_IMPORTED_MODULE_6__["listenOpts"]
         containerBottom = containerTop + containerHeight
       }
 
-      top = Object(_utils_dom_js__WEBPACK_IMPORTED_MODULE_2__["offset"])(this.$el).top
-      bottom = top + this.height
+      const top = Object(_utils_dom_js__WEBPACK_IMPORTED_MODULE_2__["offset"])(this.$el).top
+      const bottom = top + this.height
 
       if (this.observer !== void 0 || (bottom > containerTop && top < containerBottom)) {
         const percent = (containerBottom - top) / (this.height + containerHeight)
@@ -58520,7 +58542,7 @@ __webpack_require__.r(__webpack_exports__);
   render (h) {
     const def = Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["slot"])(this, 'default')
 
-    let props = (
+    const props = (
       this.type === 'menu' &&
       def !== void 0 &&
       def[0] !== void 0 &&
@@ -59324,7 +59346,7 @@ const dragType = {
           ),
         diff = this.max - this.min
 
-      let dragging = {
+      const dragging = {
         left,
         top,
         width,
@@ -59335,9 +59357,8 @@ const dragType = {
         ratioMax: (this.model.max - this.min) / diff
       }
 
-      let
-        ratio = Object(_slider_slider_utils_js__WEBPACK_IMPORTED_MODULE_1__["getRatio"])(event, dragging, this.isReversed, this.vertical),
-        type
+      const ratio = Object(_slider_slider_utils_js__WEBPACK_IMPORTED_MODULE_1__["getRatio"])(event, dragging, this.isReversed, this.vertical)
+      let type
 
       if (this.dragOnlyRange !== true && ratio < dragging.ratioMin + sensitivity) {
         type = dragType.MIN
@@ -59369,10 +59390,10 @@ const dragType = {
     },
 
     __updatePosition (event, dragging = this.dragging) {
-      let
+      const
         ratio = Object(_slider_slider_utils_js__WEBPACK_IMPORTED_MODULE_1__["getRatio"])(event, dragging, this.isReversed, this.vertical),
-        model = Object(_slider_slider_utils_js__WEBPACK_IMPORTED_MODULE_1__["getModel"])(ratio, this.min, this.max, this.step, this.decimals),
-        pos
+        model = Object(_slider_slider_utils_js__WEBPACK_IMPORTED_MODULE_1__["getModel"])(ratio, this.min, this.max, this.step, this.decimals)
+      let pos
 
       switch (dragging.type) {
         case dragType.MIN:
@@ -59418,7 +59439,7 @@ const dragType = {
           break
 
         case dragType.RANGE:
-          let
+          const
             ratioDelta = ratio - dragging.offsetRatio,
             minR = Object(_utils_format_js__WEBPACK_IMPORTED_MODULE_3__["between"])(dragging.ratioMin + ratioDelta, 0, 1 - dragging.rangeRatio),
             modelDelta = model - dragging.offsetModel,
@@ -62999,7 +63020,7 @@ function getModel (ratio, min, max, step, decimals) {
   return Object(_utils_format_js__WEBPACK_IMPORTED_MODULE_0__["between"])(model, min, max)
 }
 
-let SliderMixin = {
+const SliderMixin = {
   mixins: [ _mixins_dark_js__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_form_js__WEBPACK_IMPORTED_MODULE_2__["default"] ],
 
   directives: {
@@ -66501,7 +66522,7 @@ __webpack_require__.r(__webpack_exports__);
 
   methods: {
     __getContent (h) {
-      let top = Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["slot"])(this, 'message', [])
+      const top = Object(_utils_slot_js__WEBPACK_IMPORTED_MODULE_4__["slot"])(this, 'message', [])
 
       if (this.vertical === true) {
         this.__isValidPanelName(this.value) && this.__updatePanelIndex()
@@ -67996,7 +68017,7 @@ __webpack_require__.r(__webpack_exports__);
     },
 
     computedCols () {
-      let { sortBy, descending } = this.computedPagination
+      const { sortBy, descending } = this.computedPagination
 
       const cols = this.visibleColumns !== void 0
         ? this.colList.filter(col => col.required === true || this.visibleColumns.includes(col.name) === true)
@@ -68332,7 +68353,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 function samePagination (oldPag, newPag) {
-  for (let prop in newPag) {
+  for (const prop in newPag) {
     if (newPag[prop] !== oldPag[prop]) {
       return false
     }
@@ -69550,11 +69571,11 @@ const
     },
 
     __scrollTowards (value) {
+      const content = this.$refs.content
       let
-        content = this.$refs.content,
         pos = this.vertical === true ? content.scrollTop : content.scrollLeft,
-        direction = value < pos ? -1 : 1,
         done = false
+      const direction = value < pos ? -1 : 1
 
       pos += direction * 5
       if (pos < 0) {
@@ -70023,14 +70044,15 @@ __webpack_require__.r(__webpack_exports__);
     },
 
     __updateClock (evt, clockRect, cacheVal) {
-      let
-        val,
+      const
         pos = Object(_utils_event_js__WEBPACK_IMPORTED_MODULE_5__["position"])(evt),
         height = Math.abs(pos.top - clockRect.top),
         distance = Math.sqrt(
           Math.pow(Math.abs(pos.top - clockRect.top), 2) +
           Math.pow(Math.abs(pos.left - clockRect.left), 2)
-        ),
+        )
+      let
+        val,
         angle = Math.asin(height / distance) * (180 / Math.PI)
 
       if (pos.top < clockRect.top) {
@@ -71628,13 +71650,12 @@ __webpack_require__.r(__webpack_exports__);
 
       const isParent = children.length > 0 || (meta.lazy && meta.lazy !== 'loaded')
 
-      let
-        body = node.body
-          ? this.$scopedSlots[`body-${node.body}`] || this.$scopedSlots['default-body']
-          : this.$scopedSlots['default-body'],
-        slotScope = header !== void 0 || body !== void 0
-          ? this.__getSlotScope(node, meta, key)
-          : null
+      let body = node.body
+        ? this.$scopedSlots[`body-${node.body}`] || this.$scopedSlots['default-body']
+        : this.$scopedSlots['default-body']
+      const slotScope = header !== void 0 || body !== void 0
+        ? this.__getSlotScope(node, meta, key)
+        : null
 
       if (body !== void 0) {
         body = h('div', { staticClass: 'q-tree__node-body relative-position' }, [
@@ -73379,7 +73400,8 @@ __webpack_require__.r(__webpack_exports__);
 function showRipple (evt, el, ctx, forceCenter) {
   ctx.modifiers.stop === true && Object(_utils_event_js__WEBPACK_IMPORTED_MODULE_1__["stop"])(evt)
 
-  let { center, color } = ctx.modifiers
+  const color = ctx.modifiers.color
+  let center = ctx.modifiers.center
   center = center === true || forceCenter === true
 
   const
@@ -73546,7 +73568,7 @@ function updateBinding (ctx, { value, oldValue }) {
   name: 'scroll',
 
   bind (el) {
-    let ctx = {
+    const ctx = {
       scroll () {
         ctx.handler(
           Object(_utils_scroll_js__WEBPACK_IMPORTED_MODULE_0__["getScrollPosition"])(ctx.scrollTarget),
@@ -73563,7 +73585,7 @@ function updateBinding (ctx, { value, oldValue }) {
   },
 
   inserted (el, binding) {
-    let ctx = el.__qscroll
+    const ctx = el.__qscroll
     ctx.scrollTarget = Object(_utils_scroll_js__WEBPACK_IMPORTED_MODULE_0__["getScrollTarget"])(el)
     updateBinding(ctx, binding)
   },
@@ -73575,7 +73597,7 @@ function updateBinding (ctx, { value, oldValue }) {
   },
 
   unbind (el) {
-    let ctx = el.__qscroll_old || el.__qscroll
+    const ctx = el.__qscroll_old || el.__qscroll
     if (ctx !== void 0) {
       ctx.scrollTarget.removeEventListener('scroll', ctx.scroll, _utils_event_js__WEBPACK_IMPORTED_MODULE_1__["listenOpts"].passive)
       delete el[el.__qscroll_old ? '__qscroll_old' : '__qscroll']
@@ -73621,7 +73643,7 @@ function updateBinding (ctx, { value, oldValue }) {
   name: 'scroll-fire',
 
   bind (el) {
-    let ctx = {
+    const ctx = {
       scroll: Object(_utils_debounce_js__WEBPACK_IMPORTED_MODULE_0__["default"])(() => {
         let containerBottom, elBottom
 
@@ -73649,7 +73671,7 @@ function updateBinding (ctx, { value, oldValue }) {
   },
 
   inserted (el, binding) {
-    let ctx = el.__qscrollfire
+    const ctx = el.__qscrollfire
     ctx.scrollTarget = Object(_utils_scroll_js__WEBPACK_IMPORTED_MODULE_2__["getScrollTarget"])(el)
     updateBinding(ctx, binding)
   },
@@ -73661,7 +73683,7 @@ function updateBinding (ctx, { value, oldValue }) {
   },
 
   unbind (el) {
-    let ctx = el.__qscrollfire_old || el.__qscrollfire
+    const ctx = el.__qscrollfire_old || el.__qscrollfire
     if (ctx !== void 0) {
       ctx.scrollTarget.removeEventListener('scroll', ctx.scroll, _utils_event_js__WEBPACK_IMPORTED_MODULE_3__["listenOpts"].passive)
       delete el[el.__qscrollfire_old ? '__qscrollfire_old' : '__qscrollfire']
@@ -73873,8 +73895,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function getChanges (evt, ctx, isFinal) {
+  const pos = Object(_utils_event_js__WEBPACK_IMPORTED_MODULE_2__["position"])(evt)
   let
-    pos = Object(_utils_event_js__WEBPACK_IMPORTED_MODULE_2__["position"])(evt),
     dir,
     distX = pos.left - ctx.event.x,
     distY = pos.top - ctx.event.y,
@@ -75470,7 +75492,7 @@ __webpack_require__.r(__webpack_exports__);
 function getLocale () {
   if (_plugins_Platform_js__WEBPACK_IMPORTED_MODULE_2__["isSSR"] === true) { return }
 
-  let val =
+  const val =
     navigator.language ||
     navigator.languages[0] ||
     navigator.browserLanguage ||
@@ -76664,7 +76686,8 @@ function filterFiles (files, rejectedFiles, failedPropValidation, filterFn) {
           ext = ext.trim()
           if (ext === '*') { // support "*"
             return '*/'
-          } else if (ext.endsWith('/*')) { // support "image/*" or "*/*"
+          }
+          else if (ext.endsWith('/*')) { // support "image/*" or "*/*"
             ext = ext.slice(0, ext.length - 1)
           }
           return ext.toUpperCase()
@@ -76787,7 +76810,7 @@ function filterFiles (files, rejectedFiles, failedPropValidation, filterFn) {
 
     __onDrop (e) {
       Object(_utils_event_js__WEBPACK_IMPORTED_MODULE_0__["stopAndPrevent"])(e)
-      let files = e.dataTransfer.files
+      const files = e.dataTransfer.files
 
       if (files.length > 0) {
         this.__addFiles(null, files)
@@ -77168,8 +77191,9 @@ const MARKER = String.fromCharCode(1)
 
       let
         maskMarked = this.maskMarked,
-        padPos = maskMarked.indexOf(MARKER),
         pad = ''
+      const
+        padPos = maskMarked.indexOf(MARKER)
 
       if (padPos > -1) {
         for (let i = size - maskMarked.length; i > 0; i--) {
@@ -78301,7 +78325,7 @@ function shouldPreventScroll (e) {
 function onAppleScroll (e) {
   if (e.target === document) {
     // required, otherwise iOS blocks further scrolling
-    // until the mobile scrollbar dissapears
+    // until the mobile scrollbar dissappears
     document.scrollingElement.scrollTop = document.scrollingElement.scrollTop // eslint-disable-line
   }
 }
@@ -79213,7 +79237,7 @@ const commonVirtPropsList = Object.keys(commonVirtScrollProps)
           this.virtualScrollStickySizeStart,
           this.virtualScrollStickySizeEnd
         ),
-        scrollMaxStart = scrollDetails.scrollMaxSize - Math.max(scrollDetails.scrollViewSize, scrollDetails.offsetEnd),
+        scrollMaxStart = scrollDetails.scrollMaxSize - Math.max(scrollDetails.scrollViewSize, scrollDetails.offsetEnd) - this.virtualScrollSizes[this.virtualScrollLength - 1],
         listLastIndex = this.virtualScrollLength - 1
 
       if (this.prevScrollStart === scrollDetails.scrollStart) {
@@ -79594,7 +79618,7 @@ function getProp () {
 
 function getMetaTag (v) {
   const els = document.getElementsByTagName('META')
-  for (let i in els) {
+  for (const i in els) {
     if (els[i].name === v) {
       return els[i]
     }
@@ -79983,12 +80007,13 @@ function set (key, val, opts = {}, ssr) {
 }
 
 function get (key, ssr) {
-  let
-    result = key ? null : {},
+  const
     cookieSource = ssr ? ssr.req.headers : document,
     cookies = cookieSource.cookie ? cookieSource.cookie.split('; ') : [],
+    l = cookies.length
+  let
+    result = key ? null : {},
     i = 0,
-    l = cookies.length,
     parts,
     name,
     cookie
@@ -80217,7 +80242,8 @@ let
   vm,
   uid = 0,
   timeout,
-  props = {},
+  props = {}
+const
   originalDefaults = {
     delay: 0,
     message: false,
@@ -80372,7 +80398,7 @@ __webpack_require__.r(__webpack_exports__);
       return
     }
 
-    let props = cfg.loadingBar !== void 0
+    const props = cfg.loadingBar !== void 0
       ? { ...cfg.loadingBar }
       : {}
 
@@ -80472,7 +80498,7 @@ function normalize (meta) {
       metaType = meta[type[0]],
       metaProp = type[1]
 
-    for (let name in metaType) {
+    for (const name in metaType) {
       const metaLink = metaType[name]
 
       if (metaLink.template) {
@@ -80492,7 +80518,7 @@ function changed (old, def) {
   if (Object.keys(old).length !== Object.keys(def).length) {
     return true
   }
-  for (let key in old) {
+  for (const key in old) {
     if (old[key] !== def[key]) {
       return true
     }
@@ -80508,7 +80534,7 @@ function htmlFilter (name) {
 }
 
 function diff (meta, other) {
-  let add = {}, remove = {}
+  const add = {}, remove = {}
 
   if (meta === void 0) {
     return { add: other, remove }
@@ -80529,12 +80555,12 @@ function diff (meta, other) {
 
     add[type] = {}
 
-    for (let key in old) {
+    for (const key in old) {
       if (cur.hasOwnProperty(key) === false) {
         remove[type].push(key)
       }
     }
-    for (let key in cur) {
+    for (const key in cur) {
       if (old.hasOwnProperty(key) === false) {
         add[type][key] = cur[key]
       }
@@ -80570,9 +80596,9 @@ function apply ({ add, remove }) {
   ;['meta', 'link', 'script'].forEach(type => {
     const metaType = add[type]
 
-    for (let name in metaType) {
+    for (const name in metaType) {
       const tag = document.createElement(type)
-      for (let att in metaType[name]) {
+      for (const att in metaType[name]) {
         if (att !== 'innerHTML') {
           tag.setAttribute(att, metaType[name][att])
         }
@@ -80646,7 +80672,7 @@ function getHead (meta) {
   ;['meta', 'link', 'script'].forEach(type => {
     const metaType = meta[type]
 
-    for (let att in metaType) {
+    for (const att in metaType) {
       const attrs = Object.keys(metaType[att])
         .filter(att => att !== 'innerHTML')
         .map(getAttr(metaType[att]))
@@ -80802,7 +80828,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let uid = 0
-let defaults = {}
+const defaults = {}
 
 const attrs = { role: 'alert' }
 
@@ -80868,7 +80894,7 @@ const Notifications = {
         return false
       }
 
-      let notif = { textColor: 'white' }
+      const notif = { textColor: 'white' }
 
       if (typeof config === 'string' || config.ignoreDefaults !== true) {
         Object.assign(notif, defaults)
@@ -82123,7 +82149,7 @@ function hexToRgb (hex) {
     hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3]
   }
 
-  let num = parseInt(hex, 16)
+  const num = parseInt(hex, 16)
 
   return hex.length > 6
     ? { r: num >> 24 & 255, g: num >> 16 & 255, b: num >> 8 & 255, a: Math.round((num & 255) / 2.55) }
@@ -82131,16 +82157,17 @@ function hexToRgb (hex) {
 }
 
 function hsvToRgb ({ h, s, v, a }) {
-  let r, g, b, i, f, p, q, t
+  let r, g, b
   s = s / 100
   v = v / 100
 
   h = h / 360
-  i = Math.floor(h * 6)
-  f = h * 6 - i
-  p = v * (1 - s)
-  q = v * (1 - f * s)
-  t = v * (1 - (1 - f) * s)
+  const
+    i = Math.floor(h * 6),
+    f = h * 6 - i,
+    p = v * (1 - s),
+    q = v * (1 - f * s),
+    t = v * (1 - (1 - f) * s)
 
   switch (i % 6) {
     case 0:
@@ -82184,12 +82211,13 @@ function hsvToRgb ({ h, s, v, a }) {
 }
 
 function rgbToHsv ({ r, g, b, a }) {
-  let
-    max = Math.max(r, g, b), min = Math.min(r, g, b),
+  const
+    max = Math.max(r, g, b),
+    min = Math.min(r, g, b),
     d = max - min,
-    h,
     s = (max === 0 ? 0 : d / max),
     v = max / 255
+  let h
 
   switch (max) {
     case min:
@@ -82524,7 +82552,8 @@ function jalaaliMonthLength (jy, jm) {
     @returns number of years since the last leap year (0 to 4)
  */
 function jalCalLeap (jy) {
-  let bl = breaks.length,
+  const bl = breaks.length
+  let
     jp = breaks[0],
     jm,
     jump,
@@ -82567,15 +82596,15 @@ function jalCalLeap (jy) {
   @see: http://www.fourmilab.ch/documents/calendar/
 */
 function jalCal (jy, withoutLeap) {
-  let bl = breaks.length,
-    gy = jy + 621,
+  const
+    bl = breaks.length,
+    gy = jy + 621
+  let
     leapJ = -14,
     jp = breaks[0],
     jm,
     jump,
     leap,
-    leapG,
-    march,
     n,
     i
 
@@ -82597,10 +82626,10 @@ function jalCal (jy, withoutLeap) {
   if (mod(jump, 33) === 4 && jump - n === 4) { leapJ += 1 }
 
   // And the same in the Gregorian calendar (until the year gy).
-  leapG = div(gy, 4) - div((div(gy, 100) + 1) * 3, 4) - 150
+  const leapG = div(gy, 4) - div((div(gy, 100) + 1) * 3, 4) - 150
 
   // Determine the Gregorian date of Farvardin the 1st.
-  march = 20 + leapJ - leapG
+  const march = 20 + leapJ - leapG
 
   // Find how many years have passed since the last leap year.
   if (!withoutLeap) {
@@ -82641,13 +82670,15 @@ function j2d (jy, jm, jd) {
     jd: Jalaali day (1 to 29/31)
 */
 function d2j (jdn) {
-  let gy = d2g(jdn).gy, // Calculate Gregorian year (gy).
+  const gy = d2g(jdn).gy // Calculate Gregorian year (gy).
+  let
     jy = gy - 621,
-    r = jalCal(jy, false),
-    jdn1f = g2d(gy, 3, r.march),
     jd,
     jm,
     k
+  const
+    r = jalCal(jy, false),
+    jdn1f = g2d(gy, 3, r.march)
 
   // Find number of days that passed since 1 Farvardin.
   k = jdn - jdn1f
@@ -82712,17 +82743,13 @@ function g2d (gy, gm, gd) {
     gd: Calendar day of the month M (1 to 28/29/30/31)
 */
 function d2g (jdn) {
-  let j,
-    i,
-    gd,
-    gm,
-    gy
-  j = 4 * jdn + 139361631
+  let j = 4 * jdn + 139361631
   j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908
-  i = div(mod(j, 1461), 4) * 5 + 308
-  gd = div(mod(i, 153), 5) + 1
-  gm = mod(div(i, 153), 12) + 1
-  gy = div(j, 1461) - 100100 + div(8 - gm, 6)
+  const
+    i = div(mod(j, 1461), 4) * 5 + 308,
+    gd = div(mod(i, 153), 5) + 1,
+    gm = mod(div(i, 153), 12) + 1,
+    gy = div(j, 1461) - 100100 + div(8 - gm, 6)
   return {
     gy: gy,
     gm: gm,
@@ -83271,7 +83298,7 @@ function getDiff (t, sub, interval) {
 }
 
 function getDateDiff (date, subtract, unit = 'days') {
-  let
+  const
     t = new Date(date),
     sub = new Date(subtract)
 
@@ -83607,7 +83634,7 @@ function formatDate (val, mask, dateLocale, __forcedYear, __forcedTimezoneOffset
     return
   }
 
-  let date = new Date(val)
+  const date = new Date(val)
 
   if (isNaN(date)) {
     return
@@ -83744,7 +83771,7 @@ function width (el) {
 }
 
 function css (element, css) {
-  let style = element.style
+  const style = element.style
 
   Object.keys(css).forEach(prop => {
     style[prop] = css[prop]
@@ -83814,7 +83841,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _key_composition_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./key-composition.js */ "./node_modules/quasar/src/utils/key-composition.js");
 
 
-let handlers = []
+const handlers = []
 let escDown = false
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -84126,7 +84153,7 @@ function clean (link) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return extend; });
-let
+const
   toString = Object.prototype.toString,
   hasOwn = Object.prototype.hasOwnProperty,
   class2type = {}
@@ -84161,8 +84188,8 @@ function extend () {
     options, name, src, copy, copyIsArray, clone,
     target = arguments[0] || {},
     i = 1,
-    length = arguments.length,
     deep = false
+  const length = arguments.length
 
   if (typeof target === 'boolean') {
     deep = target
@@ -84270,7 +84297,7 @@ function pad (v, length = 2, char = '0') {
     return v
   }
 
-  let val = '' + v
+  const val = '' + v
   return val.length >= length
     ? val
     : new Array(length - val.length + 1).join(char) + val
@@ -84464,7 +84491,7 @@ function isDeepEqual (a, b) {
       return false
     }
 
-    let length, i, keys
+    let length, i
 
     if (a.constructor === Array) {
       length = a.length
@@ -84550,7 +84577,7 @@ function isDeepEqual (a, b) {
       return a.toString() === b.toString()
     }
 
-    keys = Object.keys(a)
+    const keys = Object.keys(a)
     length = keys.length
 
     if (length !== Object.keys(b).length) {
@@ -84673,7 +84700,7 @@ function openWindow (url, reject) {
     return vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$q.electron.shell.openExternal(url)
   }
 
-  let win = open(url, '_blank')
+  const win = open(url, '_blank')
 
   if (win) {
     _plugins_Platform_js__WEBPACK_IMPORTED_MODULE_1__["default"].is.desktop && win.focus()
@@ -84779,7 +84806,7 @@ __webpack_require__.r(__webpack_exports__);
 let vpLeft, vpTop
 
 function validatePosition (pos) {
-  let parts = pos.split(' ')
+  const parts = pos.split(' ')
   if (parts.length !== 2) {
     return false
   }
@@ -84804,7 +84831,7 @@ function validateOffset (val) {
 }
 
 function parsePosition (pos) {
-  let parts = pos.split(' ')
+  const parts = pos.split(' ')
   return { vertical: parts[0], horizontal: parts[1] }
 }
 
@@ -85235,7 +85262,7 @@ function getScrollbarWidth () {
 
   document.body.appendChild(outer)
 
-  let w1 = inner.offsetWidth
+  const w1 = inner.offsetWidth
   outer.style.overflow = 'scroll'
   let w2 = inner.offsetWidth
 
@@ -85470,7 +85497,7 @@ const modifiersAll = {
 }
 
 function getModifierDirections (mod) {
-  let dir = {}
+  const dir = {}
 
   directions.forEach(direction => {
     if (mod[direction]) {
@@ -85550,8 +85577,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let
   buf,
-  bufIdx = 0,
-  hexBytes = new Array(256)
+  bufIdx = 0
+const hexBytes = new Array(256)
 
 // Pre-calculate toString(16) for speed
 for (let i = 0; i < 256; i++) {
@@ -85698,16 +85725,14 @@ function encode (value) {
 }
 
 function decode (value) {
-  let type, length, source
-
-  length = value.length
+  const length = value.length
   if (length < 9) {
     // then it wasn't encoded by us
     return value
   }
 
-  type = value.substr(0, 8)
-  source = value.substring(9)
+  const type = value.substr(0, 8)
+  const source = value.substring(9)
 
   switch (type) {
     case '__q_date':
@@ -89009,6 +89034,7 @@ var render = function() {
                 [
                   _c("q-select", {
                     attrs: {
+                      clearable: "",
                       label: "Velocidad del Enlace",
                       options: _vm.speeds,
                       "emit-value": "",

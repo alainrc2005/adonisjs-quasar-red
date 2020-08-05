@@ -45,6 +45,9 @@ Route.group(() => {
 
     Route.post('/municipalities/list','MunicipalityController.fetch')
     Route.post('/municipalities/forselect','MunicipalityController.getForSelect')
+    Route.post('/municipality/store','MunicipalityController.store')
+    Route.post('/municipality/update','MunicipalityController.update')
+    Route.post('/municipality/destroy','MunicipalityController.destroy')
 
     Route.post('/speeds/list','SpeedController.fetch')
     Route.post('/speed/store','SpeedController.store')
@@ -55,6 +58,9 @@ Route.group(() => {
     Route.post('/resource/store','ResourceController.store')
     Route.post('/resource/update','ResourceController.update')
     Route.post('/resource/destroy','ResourceController.destroy')
+
+    Route.post('/entities/list','EntityController.fetch')
+    Route.post('/entities/forselect','EntityController.getForSelect')
   }).prefix('api').middleware(['auth'])
 
 
