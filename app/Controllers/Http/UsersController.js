@@ -109,6 +109,16 @@ class UsersController {
         }
         return result;
     }
+
+    async getUserCommon(user_id) {
+        let result = { code: 'Ok' };
+        try {
+            result.user = await Database.raw('select id,name,email,IF(photo is null,null,"PHOTO") photo from users where id=?',[user_id]).first();
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
 }
 
 module.exports = UsersController

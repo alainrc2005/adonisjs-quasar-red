@@ -61,6 +61,10 @@ Route.group(() => {
 
     Route.post('/entities/list','EntityController.fetch')
     Route.post('/entities/forselect','EntityController.getForSelect')
+    Route.post('/entity/get','EntityController.getEntity')
+    Route.post('/entity/store','EntityController.store')
+    Route.post('/entity/update','EntityController.update')
+    Route.post('/entity/destroy','EntityController.destroy')
   }).prefix('api').middleware(['auth'])
 
 

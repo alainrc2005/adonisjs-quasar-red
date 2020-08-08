@@ -107699,7 +107699,7 @@ if (window.utkn) {
 }
 
 var axiosContext = axios__WEBPACK_IMPORTED_MODULE_5___default.a.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'http://127.0.0.1:3333',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content

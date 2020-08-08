@@ -41,6 +41,52 @@ class EntityController {
         }
         return result;
     }
+
+    async getEntity({ request }){
+        let result = { code: 'Ok' };
+        try {
+            result.entity = await Database.from('entities').where('id',request.input('id'))
+            .select('id', 'name', 'address', 'workstations', 'users',
+            'link_type', 'link_speed', 'rlan', 'rlan_permissions',
+            'vpn', 'vpn_permissions', 'plc', 'plc_permissions',
+            'voip', 'voip_permissions', 'link_provider', 'resource_type',
+            'province', 'municipality', 'email_domain', 'email_server', 'proxy_server',
+            'phone_anchor', 'cac', 'entity_date').first();
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async store({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            await br.commonCreate(Entity, request, 'D022', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async update({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            await br.commonUpdate(Entity, request, 'D023', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async destroy({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            await br.commonDestroy(Entity, request, 'D024', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
 }
 
 module.exports = EntityController

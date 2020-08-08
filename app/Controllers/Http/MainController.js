@@ -15,7 +15,7 @@ const Database = use('Database')
 
 class MainController {
     async index({ request, view, session }) {
-        if (session.get('mw_visit')===null){
+        if (session.get('mw_visit') === null){
             await Database.insert({
                 ipaddr: request.ip(),
                 date: moment().format('YYYY-MM-DD')
