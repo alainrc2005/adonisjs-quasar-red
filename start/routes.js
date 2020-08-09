@@ -25,6 +25,11 @@ Route.get('/user/photo/:id','UsersController.getUserPhotoById')
 Route.group(() => {
     Route.post('/user/logout','UsersController.logout')
     Route.post('/users/list','UsersController.fetch')
+    Route.post('/user/store','UsersController.store')
+    Route.post('/user/update','UsersController.update')
+    Route.post('/user/destroy','UsersController.destroy')
+    Route.post('/user/get','UsersController.getUser')
+    Route.post('/user/current','UsersController.getCurrentUser')
 
     Route.post('/stats','MainController.getMainDashboard')
     Route.post('/admin/stats','MainController.getAdminDashboard')

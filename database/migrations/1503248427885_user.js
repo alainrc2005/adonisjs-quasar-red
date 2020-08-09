@@ -10,6 +10,8 @@ class UserSchema extends Schema {
       table.string('username', 80).notNullable().unique()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
+      table.specificType('photo','longblob')
+      table.specificType('banned','char(1)').notNullable().defaultTo('0')
       table.timestamps()
     })
   }

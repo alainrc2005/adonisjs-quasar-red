@@ -9,6 +9,11 @@ const Helpers = use('Helpers')
 const _ = require('lodash')
 const dt = make('App/Libraries/Datatable')
 const br = make('App/Libraries/BaseRepo')
+const { str_random } = use('App/Helpers')
+const Hash = use('Hash')
+const Database = use('Database')
+const moment = require('moment')
+const getStream = use('get-stream')
 
 class UsersController {
 
@@ -113,7 +118,108 @@ class UsersController {
     async getUserCommon(user_id) {
         let result = { code: 'Ok' };
         try {
-            result.user = await Database.raw('select id,name,email,IF(photo is null,null,"PHOTO") photo from users where id=?',[user_id]).first();
+            result.user = (await Database.raw('select id,username,email,IF(photo is null,null,"PHOTO") photo from users where id=?', [user_id]))[0][0];
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async getCurrentUser({ auth }){
+        return await this.getUserCommon(auth.user.id)
+    }
+
+    async getUser({ request }){
+        return await this.getUserCommon(request.input('id'))
+    }
+
+    async store({ request, auth }) {
+        let result = { code: 'Ok' };
+        try {
+            let password = await str_random(32),
+                user = request.all(),
+                roles = request.input('roles')
+            user.password = await Hash.make(password);
+            const rules = {
+                username: 'required',
+                email: 'required|email',
+                password: 'required',
+                roles: 'required|array'
+            };
+            const validation = await validate(user, rules);
+            if (validation.fails()) {
+                result.code = 'validation fails'
+                return result
+            }
+            delete user.roles
+            if (user.photo){
+                let reg = /^data:image\/([\w+]+);base64,([\s\S]+)/;
+                let match = user.photo.match(reg);
+              
+                if (!match) {
+                  throw new Error('image base64 data error');
+                }
+
+                user.photo = Buffer.from(match[2], 'base64')
+            }
+            await Database.transaction(async (trx) => {
+                user.created_at = user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
+                let record = await User.create(user, trx)
+                await trx.insert(br.getActionData('D003', auth.user.id, request.ip(), record.id)).into('actions')
+                let mr = roles.join(',');
+                await trx.raw(`insert into users_grants select null,${record.id} as user_id,rol_id,grant_id from roles_grants where rol_id in (${mr})`)
+            })
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async update({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            let user = request.all(),
+                roles = request.input('roles')
+            const rules = {
+                username: 'required',
+                email: 'required|email',
+                roles: 'required|array'
+            };
+            const validation = await validate(user, rules);
+            if (validation.fails()) {
+                result.code = 'validation fails'
+                return result
+            }
+            delete user.roles
+            if (user.photo){
+                let reg = /^data:image\/([\w+]+);base64,([\s\S]+)/;
+                let match = user.photo.match(reg);
+              
+                if (!match) {
+                  throw new Error('image base64 data error');
+                }
+
+                user.photo = Buffer.from(match[2], 'base64')
+            }
+            await Database.transaction(async (trx) => {
+                user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
+                let record = await User.findOrFail(user.id)
+                await trx.from('users_grants').where('user_id',user.id).delete()
+                await trx.from('users').where('id',user.id).update(user)
+                await trx.insert(br.getActionData('D004', auth.user.id, request.ip(), JSON.stringify(record))).into('actions')
+                let mr = roles.join(',');
+                await trx.raw(`insert into users_grants select null,${user.id} as user_id,rol_id,grant_id from roles_grants where rol_id in (${mr})`)
+            })
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async destroy({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            br.commonDestroy(User,request,'D005', auth.user.id);
         } catch (e) {
             result.code = e.message;
         }
