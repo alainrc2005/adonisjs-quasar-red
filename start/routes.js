@@ -30,6 +30,7 @@ Route.group(() => {
     Route.post('/user/destroy','UsersController.destroy')
     Route.post('/user/get','UsersController.getUser')
     Route.post('/user/current','UsersController.getCurrentUser')
+    Route.post('/user/banned','UsersController.setBanned')
 
     Route.post('/stats','MainController.getMainDashboard')
     Route.post('/admin/stats','MainController.getAdminDashboard')
@@ -66,6 +67,7 @@ Route.group(() => {
 
     Route.post('/entities/list','EntityController.fetch')
     Route.post('/entities/forselect','EntityController.getForSelect')
+    Route.get('/entities/download','EntityController.download')
     Route.post('/entity/get','EntityController.getEntity')
     Route.post('/entity/store','EntityController.store')
     Route.post('/entity/update','EntityController.update')

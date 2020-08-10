@@ -3327,7 +3327,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     download: function download() {
-      window.location = '/api/entities/download';
+      window.location = '/api/entities/download?token=' + this.$store.state.main.token;
     }
   },
   mounted: function mounted() {

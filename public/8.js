@@ -163,7 +163,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 
@@ -177,14 +176,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       roles: [],
-      areas: [],
       tab: 'profile',
       user: {
         id: null,
-        name: null,
+        username: null,
         email: null,
-        roles: [],
-        areas: []
+        roles: []
       },
       passwords: {
         oldpassword: null,
@@ -202,13 +199,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   validations: {
     user: {
-      name: {
+      username: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
         minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["minLength"])(3)
       },
       email: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
         email: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["email"]
+      },
+      roles: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
       }
     },
     passwords: {
@@ -528,17 +528,17 @@ var render = function() {
                         _c("q-input", {
                           attrs: {
                             name: "name",
-                            error: _vm.$v.user.name.$invalid,
+                            error: _vm.$v.user.username.$invalid,
                             square: "",
                             label: "Nombre y Apellidos",
                             dense: ""
                           },
                           model: {
-                            value: _vm.user.name,
+                            value: _vm.$v.user.username.$model,
                             callback: function($$v) {
-                              _vm.$set(_vm.user, "name", $$v)
+                              _vm.$set(_vm.$v.user.username, "$model", $$v)
                             },
-                            expression: "user.name"
+                            expression: "$v.user.username.$model"
                           }
                         }),
                         _vm._v(" "),
@@ -551,11 +551,11 @@ var render = function() {
                             readonly: !_vm.isEmailManageable
                           },
                           model: {
-                            value: _vm.user.email,
+                            value: _vm.$v.user.email.$model,
                             callback: function($$v) {
-                              _vm.$set(_vm.user, "email", $$v)
+                              _vm.$set(_vm.$v.user.email, "$model", $$v)
                             },
-                            expression: "user.email"
+                            expression: "$v.user.email.$model"
                           }
                         }),
                         _vm._v(" "),
@@ -568,16 +568,17 @@ var render = function() {
                             "option-label": "name",
                             multiple: "",
                             readonly: "",
+                            error: _vm.$v.user.roles.$invalid,
                             "emit-value": "",
                             "map-options": "",
                             "use-chips": ""
                           },
                           model: {
-                            value: _vm.user.roles,
+                            value: _vm.$v.user.roles.$model,
                             callback: function($$v) {
-                              _vm.$set(_vm.user, "roles", $$v)
+                              _vm.$set(_vm.$v.user.roles, "$model", $$v)
                             },
-                            expression: "user.roles"
+                            expression: "$v.user.roles.$model"
                           }
                         })
                       ],

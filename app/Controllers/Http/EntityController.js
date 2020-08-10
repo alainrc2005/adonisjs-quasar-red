@@ -3,6 +3,7 @@ const dt = make('App/Libraries/Datatable')
 const Database = use('Database')
 const br = make('App/Libraries/BaseRepo')
 const Entity = use('App/Models/Entity')
+const stream = require('stream')
 
 class EntityController {
     async fetch({ request }){
@@ -86,6 +87,29 @@ class EntityController {
             result.code = e.message;
         }
         return result;
+    }
+
+    async download({ response }){
+        const dbStream = Database.select('*').from('entities').stream()
+        response.header('Content-Type', 'text/csv; charset=utf-8')
+        response.header('Content-Disposition', 'attachment; filename=\"Entidades.csv\"')
+        response.header('Cache-Control', 'no-cache')
+        let firstUseStream = false;
+        const toCSVTransform = (fields) => new stream.Transform({
+            objectMode: true,
+            transform: (row, encoding, callback) => {
+              let rowAsArr = [];
+              for(let i = 0; i < fields.length; i++) {
+                rowAsArr.push('"'+row[fields[i]]+'"');
+              }
+              if (!firstUseStream){
+                callback(null, `${'\ufeff'}${fields.join(',')}\n${rowAsArr.join(',')}\n`)
+                firstUseStream = true
+              } else callback(null, `${rowAsArr.join(',')}\n`)
+            }
+        });
+        response.implicitEnd = false
+        dbStream.pipe(toCSVTransform(['id', 'name', 'address', 'workstations','users'])).pipe(response.response)
     }
 }
 

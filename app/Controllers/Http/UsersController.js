@@ -13,7 +13,6 @@ const { str_random } = use('App/Helpers')
 const Hash = use('Hash')
 const Database = use('Database')
 const moment = require('moment')
-const getStream = use('get-stream')
 
 class UsersController {
 
@@ -119,6 +118,7 @@ class UsersController {
         let result = { code: 'Ok' };
         try {
             result.user = (await Database.raw('select id,username,email,IF(photo is null,null,"PHOTO") photo from users where id=?', [user_id]))[0][0];
+            result.user.roles = await Database.from('users_grants').where('user_id',user_id).groupBy('rol_id').distinct().pluck('rol_id');
         } catch (e) {
             result.code = e.message;
         }
@@ -220,6 +220,21 @@ class UsersController {
         let result = { code: 'Ok' };
         try {
             br.commonDestroy(User,request,'D005', auth.user.id);
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async setBanned({ request, auth }){
+        let result = { code: 'Ok' };
+        try {
+            let user = request.all()
+            await Database.transaction(async (trx) => {
+                user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
+                await trx.from('users').where('id',user.id).update(user)
+                await trx.insert(br.getActionData('D025', auth.user.id, request.ip(), user.id)).into('actions')
+            })
         } catch (e) {
             result.code = e.message;
         }

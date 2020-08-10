@@ -286,7 +286,7 @@
                 this.onRequest({pagination: this.pagination});
             },
             download () {
-                window.location = '/api/entities/download';
+                window.location = '/api/entities/download?token='+this.$store.state.main.token;
             }
         },
         async mounted() {

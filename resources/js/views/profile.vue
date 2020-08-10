@@ -58,17 +58,16 @@
                         <div class="q-gutter-y-md">
                             <q-input
                                     name="name"
-                                    :error="$v.user.name.$invalid"
-                                    square v-model="user.name" label="Nombre y Apellidos"
+                                    :error="$v.user.username.$invalid"
+                                    square v-model="$v.user.username.$model" label="Nombre y Apellidos"
                                     dense/>
-                            <q-input :error="$v.user.email.$invalid" square v-model="user.email"
+                            <q-input :error="$v.user.email.$invalid" square v-model="$v.user.email.$model"
                                      label="Correo Electrónico" dense :readonly="!isEmailManageable"/>
                             <q-select dense label="Roles" :options="roles"
                                       option-value="id"
-                                      option-label="name" v-model="user.roles"
-                                      multiple readonly
-                                      emit-value
-                                      map-options
+                                      option-label="name" v-model="$v.user.roles.$model"
+                                      multiple readonly :error="$v.user.roles.$invalid"
+                                      emit-value map-options
                                       use-chips/>
                         </div>
                     </q-card-section>
@@ -148,14 +147,12 @@
         data() {
             return {
                 roles: [],
-                areas: [],
                 tab: 'profile',
                 user: {
                     id: null,
-                    name: null,
+                    username: null,
                     email: null,
-                    roles: [],
-                    areas: []
+                    roles: []
                 },
                 passwords: {
                     oldpassword: null,
@@ -173,8 +170,9 @@
         },
         validations: {
             user: {
-                name: {required, minLength: minLength(3)},
+                username: {required, minLength: minLength(3)},
                 email: {required, email},
+                roles: {required}
             },
             passwords: {
                 oldpassword: {required, minLength: minLength(5), maxLength: maxLength(32)},
