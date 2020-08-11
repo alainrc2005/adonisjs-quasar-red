@@ -16,7 +16,7 @@ const Database = use('Database')
 
 class ProvinceSeeder {
   async run () {
-    //await Database.truncate('provinces')
+    await Database.raw('delete from provinces')
     await Database.insert([
       {id:1, abbr: 'PDR', description: 'Pinar del Río'},
       {id:2, abbr: 'MAY', description: 'Mayabeque'},
