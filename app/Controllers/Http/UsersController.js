@@ -16,6 +16,11 @@ const moment = require('moment')
 
 class UsersController {
 
+    /**
+     * @brief Login Authentication
+     * @param {request} 
+     * @param {auth} 
+     */
     async login({ request, auth, response, session }) {
         const rules = {
             email: 'required|email',
@@ -52,6 +57,10 @@ class UsersController {
         }
     }
 
+    /**
+     * @brief Logout authentication
+     * @param {*} param0 
+     */
     async logout({ request, response, session, auth }) {
         try {
             const decrypted = Encryption.decrypt(session.get('user').refreshToken);
