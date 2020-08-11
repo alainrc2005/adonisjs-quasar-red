@@ -23,6 +23,19 @@ class SpeedSeeder {
       {id: 3, description: '128 Kbps'},
       {id: 4, description: '256 Kbps'},
       {id: 5, description: '512 Kbps'},
+      {id: 6, description: '1 Mbps'},
+      {id: 7, description: '2 Mbps'},
+      {id: 8, description: '3 Mbps'},
+      {id: 9, description: '4 Mbps'},
+      {id: 10, description: '5 Mbps'},
+      {id: 11, description: '6 Mbps'},
+      {id: 12, description: '7 Mbps'},
+      {id: 13, description: '8 Mbps'},
+      {id: 14, description: '9 Mbps'},
+      {id: 15, description: '10 Mbps'},
+      {id: 16, description: '100 Mbps'},
+      {id: 19, description: '20 Mbps'},
+      {id: 20, description: '50 Mbps'},
     ]).into('speeds')
   }
 }
