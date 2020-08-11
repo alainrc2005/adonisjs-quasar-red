@@ -16,7 +16,7 @@ const Database = use('Database')
 
 class GrantSeeder {
   async run () {
-    await Database.truncate('grants')
+    await Database.raw('delete from grants')
     await Database.insert([
       {id: 100, code: 100, grant: 'Visualizar Entidades'},
       {id: 101, code: 101, grant: 'Gestionar Entidades'},
