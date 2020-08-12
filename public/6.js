@@ -210,6 +210,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -293,6 +294,9 @@ function initEntity() {
         integer: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["integer"]
       },
       link_speed: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+      },
+      resource_type: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
       },
       province: {
@@ -907,6 +911,7 @@ var render = function() {
                           attrs: {
                             options: _vm.resources,
                             dense: "",
+                            error: _vm.$v.entity.resource_type.$invalid,
                             label: "Tipo de Recurso",
                             "emit-value": "",
                             "option-value": "id",
@@ -916,11 +921,15 @@ var render = function() {
                             "hide-bottom-space": ""
                           },
                           model: {
-                            value: _vm.entity.resource_type,
+                            value: _vm.$v.entity.resource_type.$model,
                             callback: function($$v) {
-                              _vm.$set(_vm.entity, "resource_type", $$v)
+                              _vm.$set(
+                                _vm.$v.entity.resource_type,
+                                "$model",
+                                $$v
+                              )
                             },
-                            expression: "entity.resource_type"
+                            expression: "$v.entity.resource_type.$model"
                           }
                         })
                       ],

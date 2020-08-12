@@ -13,6 +13,7 @@ const { str_random } = use('App/Helpers')
 const Hash = use('Hash')
 const Database = use('Database')
 const moment = require('moment')
+const Mail = use('Mail')
 
 class UsersController {
 
@@ -243,6 +244,19 @@ class UsersController {
                 user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
                 await trx.from('users').where('id',user.id).update(user)
                 await trx.insert(br.getActionData('D025', auth.user.id, request.ip(), user.id)).into('actions')
+            })
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
+
+    async forgotPassword({ request }){
+        let result = { code: 'Ok' };
+        try {
+            await Mail.send('mails.forgotPassword',{newPassword: 'asdasd'}, (msg)=>{
+                msg.to('alainrc2005@gmail.com').from('aqui@a.com')
+                .subject('Nueva Contraseña Solicitada');
             })
         } catch (e) {
             result.code = e.message;

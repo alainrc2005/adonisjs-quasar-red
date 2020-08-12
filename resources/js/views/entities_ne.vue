@@ -108,7 +108,8 @@
                                           options-dense hide-bottom-space/>
                             </div>
                             <div class="col-md-6 col-xs-12 col-sm-12">
-                                <q-select v-model="entity.resource_type" :options="resources" dense
+                                <q-select v-model="$v.entity.resource_type.$model" :options="resources" dense
+                                          :error="$v.entity.resource_type.$invalid"
                                           label="Tipo de Recurso"
                                           emit-value option-value="id" option-label="description" map-options
                                           options-dense hide-bottom-space/>
@@ -245,6 +246,7 @@
                 workstations: {required, integer},
                 users: {required, integer},
                 link_speed: {required},
+                resource_type: {required},
                 province: {required},
                 municipality: {required}
             }

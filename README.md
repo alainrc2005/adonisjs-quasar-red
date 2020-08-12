@@ -10,6 +10,8 @@ Este proyecto es un demostrativo del uso del framework AdonisJS con Quasar
 
 `adonis seed`
 
+`adonis seed`
+
 ## Capturas de Pantalla
 ![Captura-1](https://live.staticflickr.com/65535/50161673967_28016746cf_b.jpg) 
 

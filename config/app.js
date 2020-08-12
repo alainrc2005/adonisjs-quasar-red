@@ -5,6 +5,7 @@ const Env = use('Env')
 
 module.exports = {
   version: '?v=1.0',
+  sysmail: 'admin@example.com',
   /*
   |--------------------------------------------------------------------------
   | Application Name

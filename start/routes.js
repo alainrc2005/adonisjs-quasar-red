@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 Route.post('/user/validate', 'UsersController.login')
-
+Route.post('/user/forgotPassword', 'UsersController.forgotPassword')
 
 Route.get('/user/photo/email/:email','UsersController.getUserPhotoByEmail')
 Route.get('/user/photo/:id','UsersController.getUserPhotoById')

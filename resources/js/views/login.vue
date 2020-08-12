@@ -89,7 +89,7 @@
                     await this.$router.push("/");
             },
             forgotPassword() {
-                this.$axios.post('/user/forgetPassword', {email: this.credentials.email}).then(r => {
+                this.$axios.post('/user/forgotPassword', {email: this.credentials.email}).then(r => {
                     if (r.data.code !== 'Ok') return this.showError(r.data.code);
                     Success.call(this, 'El sistema ha enviado una nueva contraseña al correo electrónico');
                 }).catch(e => {

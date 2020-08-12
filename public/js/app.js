@@ -3509,7 +3509,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     forgotPassword: function forgotPassword() {
       var _this2 = this;
 
-      this.$axios.post('/user/forgetPassword', {
+      this.$axios.post('/user/forgotPassword', {
         email: this.credentials.email
       }).then(function (r) {
         if (r.data.code !== 'Ok') return _this2.showError(r.data.code);
