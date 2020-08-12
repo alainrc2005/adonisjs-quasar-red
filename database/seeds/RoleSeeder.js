@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| UserSeeder
+| RoleSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -12,19 +12,15 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
-const Hash = use('Hash')
 const Database = use('Database')
 
-class UserSeeder {
+class RoleSeeder {
   async run () {
-    await Database.insert([
-      {
-        id: 1, username: 'Administrador del Sistema', email: 'admin@example.com',
-        password: await Hash.make('admin123')
-      }
-    ]).into('users')
-    await Database.raw('insert into users_grants select null,1,1,code from grants')
+    await Database.insert({
+      id: 1, name: 'Administradores'
+    }).into('roles')
+    await Database.raw('insert into roles_grants select null,1,code from grants')
   }
 }
 
-module.exports = UserSeeder
+module.exports = RoleSeeder
