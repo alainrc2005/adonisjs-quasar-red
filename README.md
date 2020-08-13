@@ -20,7 +20,7 @@ Este proyecto es un demostrativo del uso del framework AdonisJS con Quasar
 ![Captura-3](https://live.staticflickr.com/65535/50160880258_77341cd3e7_b.jpg)
 
 ## Progreso
-En estos momentos se encuentra a un 98% de su migración desde Laravel
+En estos momentos se encuentra a un 99% de su migración desde Laravel
 
 Siéntanse libre de utilizar este código como lo deseen. Gracias.
 Alain Ramírez Cabrejas (alainrc2005@gmail.com)
