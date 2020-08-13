@@ -179,6 +179,10 @@ class UsersController {
                 await trx.insert(br.getActionData('D003', auth.user.id, request.ip(), record.id)).into('actions')
                 let mr = roles.join(',');
                 await trx.raw(`insert into users_grants select null,${record.id} as user_id,rol_id,grant_id from roles_grants where rol_id in (${mr})`)
+                await Mail.send('mails.sendPassword', { password }, (msg) => {
+                    msg.to(user.email).from(Config.get('app.sysmail'))
+                        .subject('Clave de Seguridad');
+                })
             })
         } catch (e) {
             result.code = e.message;
