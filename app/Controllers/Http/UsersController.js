@@ -14,6 +14,7 @@ const Hash = use('Hash')
 const Database = use('Database')
 const moment = require('moment')
 const Mail = use('Mail')
+const Config = use('Config')
 
 class UsersController {
 
@@ -128,18 +129,18 @@ class UsersController {
         let result = { code: 'Ok' };
         try {
             result.user = (await Database.raw('select id,username,email,IF(photo is null,null,"PHOTO") photo from users where id=?', [user_id]))[0][0];
-            result.user.roles = await Database.from('users_grants').where('user_id',user_id).groupBy('rol_id').distinct().pluck('rol_id');
+            result.user.roles = await Database.from('users_grants').where('user_id', user_id).groupBy('rol_id').distinct().pluck('rol_id');
         } catch (e) {
             result.code = e.message;
         }
         return result;
     }
 
-    async getCurrentUser({ auth }){
+    async getCurrentUser({ auth }) {
         return await this.getUserCommon(auth.user.id)
     }
 
-    async getUser({ request }){
+    async getUser({ request }) {
         return await this.getUserCommon(request.input('id'))
     }
 
@@ -162,12 +163,12 @@ class UsersController {
                 return result
             }
             delete user.roles
-            if (user.photo){
+            if (user.photo) {
                 let reg = /^data:image\/([\w+]+);base64,([\s\S]+)/;
                 let match = user.photo.match(reg);
-              
+
                 if (!match) {
-                  throw new Error('image base64 data error');
+                    throw new Error('image base64 data error');
                 }
 
                 user.photo = Buffer.from(match[2], 'base64')
@@ -185,7 +186,7 @@ class UsersController {
         return result;
     }
 
-    async update({ request, auth }){
+    async update({ request, auth }) {
         let result = { code: 'Ok' };
         try {
             let user = request.all(),
@@ -201,12 +202,12 @@ class UsersController {
                 return result
             }
             delete user.roles
-            if (user.photo){
+            if (user.photo) {
                 let reg = /^data:image\/([\w+]+);base64,([\s\S]+)/;
                 let match = user.photo.match(reg);
-              
+
                 if (!match) {
-                  throw new Error('image base64 data error');
+                    throw new Error('image base64 data error');
                 }
 
                 user.photo = Buffer.from(match[2], 'base64')
@@ -214,8 +215,8 @@ class UsersController {
             await Database.transaction(async (trx) => {
                 user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
                 let record = await User.findOrFail(user.id)
-                await trx.from('users_grants').where('user_id',user.id).delete()
-                await trx.from('users').where('id',user.id).update(user)
+                await trx.from('users_grants').where('user_id', user.id).delete()
+                await trx.from('users').where('id', user.id).update(user)
                 await trx.insert(br.getActionData('D004', auth.user.id, request.ip(), JSON.stringify(record))).into('actions')
                 let mr = roles.join(',');
                 await trx.raw(`insert into users_grants select null,${user.id} as user_id,rol_id,grant_id from roles_grants where rol_id in (${mr})`)
@@ -226,23 +227,23 @@ class UsersController {
         return result;
     }
 
-    async destroy({ request, auth }){
+    async destroy({ request, auth }) {
         let result = { code: 'Ok' };
         try {
-            br.commonDestroy(User,request,'D005', auth.user.id);
+            br.commonDestroy(User, request, 'D005', auth.user.id);
         } catch (e) {
             result.code = e.message;
         }
         return result;
     }
 
-    async setBanned({ request, auth }){
+    async setBanned({ request, auth }) {
         let result = { code: 'Ok' };
         try {
             let user = request.all()
             await Database.transaction(async (trx) => {
                 user.updated_at = moment().format('YYYY-MM-DD HH:mm:ss')
-                await trx.from('users').where('id',user.id).update(user)
+                await trx.from('users').where('id', user.id).update(user)
                 await trx.insert(br.getActionData('D025', auth.user.id, request.ip(), user.id)).into('actions')
             })
         } catch (e) {
@@ -251,14 +252,36 @@ class UsersController {
         return result;
     }
 
-    async forgotPassword({ request }){
-        let result = { code: 'Ok' };
+    async forgotPassword({ request }) {
+        let result = { code: 'Ok' }, trx = void 0;
         try {
-            await Mail.send('mails.forgotPassword',{newPassword: 'asdasd'}, (msg)=>{
-                msg.to('alainrc2005@gmail.com').from('aqui@a.com')
-                .subject('Nueva Contraseña Solicitada');
+            const validation = await validate(request.all(), {
+                email: 'required|email'
+            });
+            if (validation.fails()) {
+                result.code = -4
+                return result
+            }
+            let password = await str_random(32),
+                user = await User.query().where('email', request.input('email')).first()
+            if (!user) {
+                result.code = -1
+                return result
+            }
+            if (user.banned === '1') {
+                result.code = -2
+                return result
+            }
+            trx = await Database.beginTransaction()
+            user.password = password
+            await user.save()
+            await Mail.send('mails.forgotPassword', { password }, (msg) => {
+                msg.to(user.email).from(Config.get('app.sysmail'))
+                    .subject('Nueva Contraseña Solicitada');
             })
+            await trx.commit()
         } catch (e) {
+            await trx.rollback()
             result.code = e.message;
         }
         return result;
