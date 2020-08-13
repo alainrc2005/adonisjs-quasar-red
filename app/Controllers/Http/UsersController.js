@@ -286,6 +286,31 @@ class UsersController {
         }
         return result;
     }
+
+    async changePassword({ request, auth }) {
+        let result = { code: 'Ok' };
+        try {
+            const validation = await validate(request.all(), {
+                oldpassword: 'required|min:5|max:32',
+                newpassword: 'required|min:5|max:32',
+                renewpassword: 'same:newpassword'
+            });
+            if (validation.fails()) {
+                result.code = -4
+                return result
+            }
+            let user = auth.user
+            if (!(await Hash.verify(request.input('oldpassword'),user.password))){
+                result.code = -3
+                return result
+            }
+            user.password = request.input('newpassword')
+            await user.save()
+        } catch (e) {
+            result.code = e.message;
+        }
+        return result;
+    }
 }
 
 module.exports = UsersController

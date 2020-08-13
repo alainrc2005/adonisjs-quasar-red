@@ -31,6 +31,7 @@ Route.group(() => {
     Route.post('/user/get','UsersController.getUser')
     Route.post('/user/current','UsersController.getCurrentUser')
     Route.post('/user/banned','UsersController.setBanned')
+    Route.post('/user/password','UsersController.changePassword')
 
     Route.post('/stats','MainController.getMainDashboard')
     Route.post('/admin/stats','MainController.getAdminDashboard')
