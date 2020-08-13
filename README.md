@@ -6,7 +6,7 @@ Este proyecto es un demostrativo del uso del framework AdonisJS con Quasar
 
 `npm install`
 
-`npm asset-prod`
+`npm run asset-prod`
 
 `adonis migration:run`
 
