@@ -4,7 +4,7 @@
 const Env = use('Env')
 
 module.exports = {
-  version: '?v=1.0',
+  version: '?v=1.2',
   sysmail: 'admin@example.com',
   /*
   |--------------------------------------------------------------------------

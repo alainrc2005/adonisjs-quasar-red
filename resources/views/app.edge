@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrfToken }}">
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <title>ZUNrev</title>
-    {{style('css/app.css?v=1.0',true)}}
+    {{style('css/app.css'+config('app.version'),true)}}
 </head>
 <body>
   @if(user)
@@ -16,6 +16,6 @@
     window.uid ={{ user.userid }}</script>
   @endif
 <div id="app"></div>
-    {{ script('js/app.js?v=1.0', true) }}
+    {{ script('js/app.js'+config('app.version'), true) }}
 </body>
 </html>
